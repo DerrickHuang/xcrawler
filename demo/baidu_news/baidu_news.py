@@ -25,7 +25,7 @@ class BaiduNewsSpider(BaseSpider):
     }
 
     def spider_started(self):
-        self.file = open('items.jl', 'w')
+        self.file = open('baidu_news.jl', 'w')
 
     def spider_stopped(self):
         self.file.close()

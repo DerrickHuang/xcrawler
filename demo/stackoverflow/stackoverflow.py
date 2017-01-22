@@ -10,6 +10,8 @@ import json
 from xcrawler.spider import BaseSpider, Request
 from lxml.html import fromstring
 
+from xcrawler import CrawlerProcess
+
 __version__ = '0.0.1'
 __author__ = 'Chris'
 
@@ -24,7 +26,7 @@ class StackoverflowSpider(BaseSpider):
     proxy = 'socks5://127.0.0.1:1080'
 
     def spider_started(self):
-        self.file = open('stk_items.jl', 'w')
+        self.file = open('stackoverflow_spider.jl', 'w')
 
     def spider_stopped(self):
         self.file.close()
@@ -68,8 +70,6 @@ class StackoverflowSpider(BaseSpider):
 
 
 def main():
-    from xcrawler import CrawlerProcess
-
     settings = {
         'download_delay': 1,
         'download_timeout': 24,
